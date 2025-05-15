@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "arknightscraft",
+	"version": "${version}",
+	"name": "ArknightsCraft",
+	"description": "Bringing Arknights (and gacha) to Minecraft!",
+	"authors": [
+		"JoshuaGD"
+	],
+	"contact": {
+		"homepage": "https://www.youtube.com/@SoloOtraMiku",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/arknightscraft/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.akcraft.ArknightsCraft"
+		],
+		"fabric-datagen": [
+			"net.akcraft.ArknightsCraftDataGenerator"
+		],
+		"client": [
+			"net.akcraft.akcraftClient"
+		]
+	},
+	"mixins": [
+		"arknightscraft.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
