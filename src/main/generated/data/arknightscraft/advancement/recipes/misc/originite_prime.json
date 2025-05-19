@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_orundum": {
+      "conditions": {
+        "items": [
+          {
+            "items": "arknightscraft:orundum"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "arknightscraft:originite_prime"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_orundum"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "arknightscraft:originite_prime"
+    ]
+  }
+}
