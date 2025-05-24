@@ -1,0 +1,65 @@
+{
+  "credit": "Made with Blockbench",
+  "ambientocclusion": true,
+  "texture_size": [512, 256],
+  "textures": {
+    "1": "arknightscraft:block/recruiter_edited",
+    "particle": "arknightscraft:block/recruiter_edited"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 4],
+      "to": [16, 8, 12],
+      "rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+      "faces": {
+        "north": {"uv": [2, 4, 6, 8], "texture": "#1"},
+        "east": {"uv": [0, 4, 2, 8], "texture": "#1"},
+        "south": {"uv": [8, 4, 12, 8], "texture": "#1"},
+        "west": {"uv": [6, 4, 8, 8], "texture": "#1"},
+        "up": {"uv": [6, 4, 2, 0], "texture": "#1"},
+        "down": {"uv": [10, 0, 6, 4], "texture": "#1"}
+      }
+    },
+    {
+      "from": [4, 2.25, 1.25],
+      "to": [12, 6.25, 2.25],
+      "rotation": {"angle": 45, "axis": "x", "origin": [4, 2.25, 1.25]},
+      "faces": {
+        "north": {"uv": [0.24306, 8.4875, 2.25, 10.5], "texture": "#1"},
+        "east": {"uv": [0, 8.4875, 0.24306, 10.5], "texture": "#1"},
+        "south": {"uv": [2.52431, 8.4875, 4.5, 10.5], "texture": "#1"},
+        "west": {"uv": [2.25, 8.4875, 2.52431, 10.5], "texture": "#1"},
+        "up": {"uv": [2.25, 8.4875, 0.24306, 8], "texture": "#1"},
+        "down": {"uv": [4.25694, 8, 2.25, 8.4875], "texture": "#1"}
+      }
+    },
+    {
+      "from": [4, 1.5, 14],
+      "to": [12, 5.5, 15],
+      "rotation": {"angle": -45, "axis": "x", "origin": [4, 1.5, 14]},
+      "faces": {
+        "north": {"uv": [0.24306, 8.4875, 2.25, 10.5], "texture": "#1"},
+        "east": {"uv": [0, 8.4875, 0.24306, 10.5], "texture": "#1"},
+        "south": {"uv": [2.52431, 8.4875, 4.5, 10.5], "texture": "#1"},
+        "west": {"uv": [2.25, 8.4875, 2.52431, 10.5], "texture": "#1"},
+        "up": {"uv": [2.25, 8.4875, 0.24306, 8], "texture": "#1"},
+        "down": {"uv": [4.25694, 8, 2.25, 8.4875], "texture": "#1"}
+      }
+    }
+  ],
+  "groups": [
+    {
+      "name": "root",
+      "origin": [8, 0, 8],
+      "color": 0,
+      "children": [
+        {
+          "name": "body",
+          "origin": [8, 0, 8],
+          "color": 0,
+          "children": [0, 1, 2]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "op_dead": {
+    "sounds": [
+        "arknightscraft:opdead"
+    ],
+    "subtitle": "subtitles.operators.death"
+  },
+  "enemy_dead": {
+    "subtitle": "subtitles.enemy.death",
+    "sounds": [
+      "arknightscraft:enemy_dead"
+    ]
+  },
+
+  "operator.u_official_idle": {
+    "sounds": [
+      "arknightscraft:operator/u_official_idle1",
+      "arknightscraft:operator/u_official_idle2",
+      "arknightscraft:operator/u_official_idle3",
+      "arknightscraft:operator/u_official_idle4",
+      "arknightscraft:operator/u_official_idle5"
+    ],
+    "subtitle": "subtitles.operators.u_official.idle"
+  },
+  "operator.u_official_hurt": {
+    "sounds": [
+      "arknightscraft:operator/u_official_hurt1"
+    ],
+    "subtitle": "subtitles.operators.u_official.hurt"
+  },
+
+  "science": {
+    "sounds": [
+      {
+      "name": "arknightscraft:science",
+        "stream": true
+      }
+    ]
+  }
+}

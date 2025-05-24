@@ -1,0 +1,30 @@
+{
+  "item.arknightscraft.originium_shard": "Originium Shard",
+  "item.arknightscraft.orundum": "Orundum",
+  "item.arknightscraft.originite_prime": "Originite Prime",
+
+  "item.arknightscraft.u_official_spawn_egg": "Deploy U-Official",
+  "item.arknightscraft.originium_slug_spawn_egg": "Spawn Originium Slug",
+
+  "item.arknightscraft.science_music_disc": "Music Disc - Science",
+  "item.arknightscraft.science_music_disc.desc": "Monster Siren Records - Science",
+
+  "block.arknightscraft.originium_ore": "Originium Ore",
+  "block.arknightscraft.originium_block": "Block of Originium",
+  "block.arknightscraft.orundum_block": "Block of Orundum",
+  "block.arknightscraft.recruiter": "Recruiter",
+
+  "itemgroup.arknightscraft.originium": "Originium",
+  "itemgroup.arknightscraft.discs": "Music Discs",
+  "itemgroup.arknightscraft.operators": "Operators/Entities",
+  "itemgroup.arknightscraft.misc_blocks": "Misc. Blocks",
+
+  "entity.arknightscraft.u_official": "U-Official",
+
+  "entity.arknightscraft.originium_slug": "Originium Slug",
+
+  "subtitles.operators.death": "Operator Dies",
+  "subtitles.enemy.death": "Enemy Dies",
+  "subtitles.operators.u_official.idle": "U-Official talks",
+  "subtitles.operators.u_official.hurt": "U-Official whimpers"
+}

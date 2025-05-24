@@ -3,9 +3,9 @@
 	"id": "arknightscraft",
 	"version": "${version}",
 	"name": "ArknightsCraft",
-	"description": "Bringing Arknights (and gacha) to Minecraft!",
+	"description": "Bringing Arknights (and gacha) to Minecraft!\nAll music and sound assets used belong to Hypergryph and Gryphline.\nThis mod is a fan-made project and is not affiliated with, endorsed by, or associated with Hypergryph or Arknights in any way.",
 	"authors": [
-		"JoshuaGD"
+		"FastRedeploy"
 	],
 	"contact": {
 		"homepage": "https://www.youtube.com/@SoloOtraMiku",
