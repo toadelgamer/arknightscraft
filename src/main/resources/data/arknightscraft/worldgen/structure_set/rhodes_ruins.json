@@ -1,17 +1,15 @@
 {
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 22080028,
+    "separation": 20,
+    "spacing": 80,
+    "spread_type": "triangular"
+  },
   "structures": [
     {
       "structure": "arknightscraft:rhodes_ruins",
       "weight": 1
     }
-  ],
-  "placement": {
-    "type": "minecraft:random_spread",
-
-    "salt": 22080028,
-
-    "spacing": 128,
-
-    "separation": 64
-  }
+  ]
 }
