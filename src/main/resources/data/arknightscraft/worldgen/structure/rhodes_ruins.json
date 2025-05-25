@@ -1,9 +1,9 @@
 {
   "type": "minecraft:jigsaw",
-  "start_pool": "arknightscraft:rhodes_ruins/ruins",
+  "start_pool": "arknightscraft:rhodes_ruins/start_pool",
   "size": 7,
   "heightRange": 40,
-  "biomes": "#arknightscraft:has_structure/rhodes_ruins",
+  "biomes": "#arknightscraft:has_structure/rhodes_ruins_biomes",
   "use_expansion_hack": false,
   "terrain_adaptation": "beard_thin",
   "project_start_to_heightmap": "WORLD_SURFACE_WG",

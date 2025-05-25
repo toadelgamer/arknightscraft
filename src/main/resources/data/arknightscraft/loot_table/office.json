@@ -1,0 +1,382 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 4
+      },
+      "bonus_rolls": {
+        "type": "minecraft:uniform",
+        "min": 0,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_book_cover",
+              "title": "Kal'tsit's journal. Vol 1",
+              "author": "Kal'tsit",
+              "generation": 1
+            },
+            {
+              "function": "minecraft:set_written_book_pages",
+              "pages": [
+                {
+                  "text": "Since our arrival in this particular world, our current squad has spent a lot of time exploring and learning its physics and mechanics.",
+                  "italic": true
+                },
+                {
+                  "text": "We've learned many useful techniques to accelerate the process of building this shelter.",
+                  "italic": true
+                },
+                {
+                  "text": "If anyone ever finds one of the many copies of this journal, they will probably find the place completely desolate.",
+                  "italic": true
+                },
+                {
+                  "text": "We can't stay here as if nothing happened. I'm not sure if Amiya is here too... We need to make sure she's okay.",
+                  "italic": true
+                },
+                {
+                  "text": "Whoever is reading this, Operator or not — if you find Amiya, please help her return safely to us.",
+                  "italic": true
+                }
+              ],
+              "mode": "append"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_book_cover",
+              "title": "Kal'tsit's journal. Vol 2",
+              "author": "Kal'tsit",
+              "generation": 2
+            },
+            {
+              "function": "minecraft:set_written_book_pages",
+              "pages": [
+                {
+                  "text": "Apparently, this world has more than one dimension. We made this discovery after Ifrit tried to set fire to an obsidian rectangle.",
+                  "italic": true
+                },
+                {
+                  "text": "After the fire began to spread across the blocks, a purple spark suddenly appeared.",
+                  "italic": true
+                },
+                {
+                  "text": "That spark turned into an entire layer of purple... aura? I don’t know how to describe it — it’s so strange...",
+                  "italic": true
+                },
+                {
+                  "text": "Mon3tr tried to extract a sample from the portal so I could analyze it later, but it was futile...",
+                  "italic": true
+                },
+                {
+                  "text": "The fact that I can't find a way to measure time is starting to become a major issue. And the sky isn't even visible in here...",
+                  "italic": true
+                },
+                {
+                  "text": "We just survived a swarm of pig-looking zombies. Jessica shot one of them on instinct, and everything escalated—very quickly."
+                },
+                {
+                  "text": "We're on our way to one of our outposts to rest. For the time being, we won’t be visiting that dimension again.",
+                  "italic": true
+                }
+              ],
+              "mode": "append"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_book_cover",
+              "title": "Kal'tsit's journal. Vol 3",
+              "author": "Kal'tsit",
+              "generation": 3
+            },
+            {
+              "function": "minecraft:set_written_book_pages",
+              "pages": [
+                {
+                  "text": "Even if it may seem unnecessary to point this out, perhaps someone will find it useful.",
+                  "color": "#a3ffc2",
+                  "italic": true,
+                  "underlined": true
+                },
+                {
+                  "text": "I've been studying the behavior of the living creatures we frequently encounter during our daily operations.",
+                  "italic": true
+                },
+                {
+                  "text": "I can say with confidence that spiders and zombies are among the least dangerous creatures around here.",
+                  "italic": true
+                },
+                {
+                  "text": "Even Jessica, despite being so timid, can take them down with a single shot.",
+                  "italic": true
+                },
+                {
+                  "text": "Skeletons can be quite bothersome at times, especially if you don’t have anything to block their arrows—like I do, or Liskarm.",
+                  "italic": true
+                },
+                {
+                  "text": "They can also ride spiders, which is quite interesting to say the least...",
+                  "italic": true
+                },
+                {
+                  "text": "The main problem are those grass-looking creatures... They are the main threat here, and they don't disappear after the sun rises...",
+                  "italic": true
+                },
+                {
+                  "text": "My first encounter with one of those beings is truly something I've never seen before.",
+                  "italic": true
+                },
+                {
+                  "text": "Fortunately, Mon3tr is always by my side to save me whenever I'm helpless.",
+                  "italic": true
+                }
+              ],
+              "mode": "append"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_book_cover",
+              "title": "Kal'tsit's journal. Vol 4",
+              "author": "Kal'tsit",
+              "generation": 3
+            },
+            {
+              "function": "minecraft:set_written_book_pages",
+              "pages": [
+                {
+                  "text": "I finally managed to make PRTS work in this world. It's not even close to the original capacities of PRTS...",
+                  "italic": true
+                },
+                {
+                  "text": "But for now, it's enough to communicate with my operators again. I'm fairly happy with the results.",
+                  "italic": true
+                },
+                {
+                  "text": "I still need to recalibrate each communicator individually, so I'll start working on it right now.",
+                  "italic": true
+                }
+              ],
+              "mode": "append"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_book_cover",
+              "title": "Kal'tsit's journal. Vol 5",
+              "author": "Kal'tsit",
+              "generation": 3
+            },
+            {
+              "function": "minecraft:set_written_book_pages",
+              "pages": [
+                {
+                  "text": "Apparently, every single aspect from our world started appearing in here as well... Swire recently found a group of Originium Slugs.",
+                  "italic": true
+                },
+                {
+                  "text": "I'll start measuring the time with the help of PRTS. I need to know the exact length of day and night.",
+                  "italic": true
+                },
+                {
+                  "text": "...I only slept for 12 minutes, and it's already morning. It seems that time is much faster here than in our world."
+                },
+                {
+                  "text": "A full day lasts exactly 20 minutes according to the analysis done by PRTS. This will totally ruin our sleep cycles."
+                },
+                {
+                  "text": "PRTS started to keep count of hours as of today. It will be a bit confusing at first...",
+                  "italic": true
+                },
+                {
+                  "text": "But at least, this way we can keep the 24-hour habit. Even if that implies sleeping for more than 10 \"days\".",
+                  "italic": true
+                }
+              ],
+              "mode": "append"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_book_cover",
+              "title": "Kal'tsit's journal. Vol 6",
+              "author": "Kal'tsit",
+              "generation": 3
+            },
+            {
+              "function": "minecraft:set_written_book_pages",
+              "pages": [
+                {
+                  "text": "We've been in this world...for a long time now, and we definitely learned a lot.",
+                  "italic": true
+                },
+                {
+                  "text": "We adapted to basically every environment this world has to offer.",
+                  "italic": true
+                },
+                {
+                  "text": "We finally visited that dimension again, collecting all the materials we could.",
+                  "italic": true
+                },
+                {
+                  "text": "We used the newly obtained blocks to update all of the shelters design. It looks way nicer now.",
+                  "italic": true
+                },
+                {
+                  "text": "The Originium managed to establish itself in here, which is concerning me.",
+                  "italic": true
+                },
+                {
+                  "text": "I'm starting to wonder if someone from Reunion ended up here as well...",
+                  "italic": true
+                },
+                {
+                  "text": "So far, we've traveled from an outpost to another many times without any encounters.",
+                  "italic": true
+                },
+                {
+                  "text": "But I'll keep my eye out for any signs of their presence, we don't want nuisances while we try to go back home...",
+                  "italic": true
+                },
+                {
+                  "text": "This is probably the last journal I write since we're running out of paper.",
+                  "italic": true
+                },
+                {
+                  "text": "You, reader. We haven't found Amiya yet... We are constantly going out on expeditions to find her.",
+                  "italic": true
+                },
+                {
+                  "text": "Rhodes Island is slowly reuniting, but I don't want to expose them to the possible dangers out there.",
+                  "italic": true
+                },
+                {
+                  "text": "I'm not talking about the monsters, some unknown force or entity dragged us here.",
+                  "italic": true
+                },
+                {
+                  "text": "Maybe I'm wrong, but I simply cannot find any other explanation for this. We all just suddenly woke up in here.",
+                  "italic": true
+                },
+                {
+                  "text": "And if that force or entity decides to show up, I want to be the one to face it first. I've been in worse scenarios...",
+                  "italic": true
+                },
+                {
+                  "text": "Everyone is sleeping now, it's my time to go. I'll try to collect as much info as possible and record it into a journal.",
+                  "italic": true
+                },
+                {
+                  "text": "Until then, I'm certain that my operators will be able to survive on their own while I'm gone.",
+                  "italic": true
+                },
+                {
+                  "text": "Or maybe... You could help them...?",
+                  "color": "#b3ffbb",
+                  "font": "minecraft:alt",
+                  "italic": true
+                }
+              ],
+              "mode": "append"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:deepslate_tile_slab",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 16
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:deepslate_tiles",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "arknightscraft:orundum",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 0,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:quartz_block",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 0,
+                "max": 3
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
