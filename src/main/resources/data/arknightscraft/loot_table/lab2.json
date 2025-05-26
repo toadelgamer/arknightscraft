@@ -1,0 +1,216 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 5
+      },
+      "bonus_rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:awkward"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 0,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:healing"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 0,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:splash_potion",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:weakness"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 0,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_book_cover",
+              "title": "Medical Experiments",
+              "author": "Warfarin",
+              "generation": 2
+            },
+            {
+              "function": "minecraft:set_written_book_pages",
+              "pages": [
+                {
+                  "text": "This is incredible! Potions are the best discovery I've ever made! They make my job way easier now since everyone started keeping regen potions with them."
+                },
+                {
+                  "raw": {
+                    "text": "They're kinda hard to make though... We have to kill multiple of those giant flying creatures if we want regeneration potions."
+                  }
+                },
+                {
+                  "text": "I mean, It's not THAT hard to take them down, but they surely know how to make a mess with those fireballs of theirs."
+                },
+                {
+                  "text": "Thankfully, those pig-looking people gave us fire resistance potions in exchange for some gold ingots. They REAAAALLY love gold. Which is quite funny..."
+                },
+                {
+                  "text": "That place is full of gold, and I've never seen a single one of them trying to mine it or anything. But anyway, I got sidetracked from the main topic."
+                },
+                {
+                  "text": "Dr. Kal'tsit is still mad at me for exploring that dimension alone, but hey, you can't blame me for that, I needed to get back to that dimension."
+                },
+                {
+                  "text": "Besides, it was definitely worth it, because I learned how to make potions, and now the potions are indispensable for operations."
+                },
+                {
+                  "text": "The process was entirely trial and error, but after some time, I collected both essential ingredients in order to prepare a potion correctly."
+                },
+                {
+                  "text": "During my exploration, I discovered that pig people live in their own bases, apparently built by them. Sadly, I couldn't get too close before being attacked."
+                },
+                {
+                  "text": "Those guys with golden axes were not interested in gold at all, they just rushed straight up to where I was and started attacking me."
+                },
+                {
+                  "text": "I didn't get hurt, thankfully. But, I wonder if I would have survived that if the attack had hit me...."
+                },
+                {
+                  "text": "Anyways! Back to my exploration; after traveling through multiple weird looking places, I found a castle-looking structure, Holding tightly in the ocean of lava."
+                },
+                {
+                  "raw": {
+                    "text": "Before being able to even take a step inside the structure, I got sniped by a fireball; and I didn't even see where it came from."
+                  }
+                },
+                {
+                  "text": "I had to throw another potion at my feet to become immune to fire again, but I still received burns on my left arm."
+                },
+                {
+                  "text": "I'm a medic, but unlike Mulberry I can't heal burn damage, so I moved forward, ignoring the pain."
+                },
+                {
+                  "text": "I just finished preparing a few more potions. Dr. Kal'tsit has not even thanked me for the discovery... I hope she will do it someday... But whatever, let's continue."
+                },
+                {
+                  "text": "The castle was full of zombie pig men, but thankfully they're pretty chill if you don't disturb them. The other creatures though..."
+                },
+                {
+                  "text": "A tall, black skeleton started chasing me as soon as it saw me, so I had to block the way with blocks I collected from that world."
+                },
+                {
+                  "text": "It should be noted that they are not very intelligent... It's kind of funny in a way. It didn't even try to duck and go underneath the barrier."
+                },
+                {
+                  "text": "I just dug a tunnel and went on my way, discovering something truly useful shortly after."
+                },
+                {
+                  "text": "There was a weird block, spawning a lot of fire creatures! They were the ones shooting me fireballs from afar; and let me tell you, they have INSANE aim."
+                },
+                {
+                  "text": "The important thing here is, that killing them will make them drop the first essential ingredient for brewing potions: Rods! ...Yes, rods."
+                },
+                {
+                  "text": "But like, fire rods. Whatever. I spent a few minutes killing a bunch of those guys, and then left that place to continue exploring the castle."
+                },
+                {
+                  "text": "I found a couple chests along the way, getting some gold and a weirdly shaped armor... I think it's for horses in this world."
+                },
+                {
+                  "text": "The next interesting thing happens after escaping another group of black skeletons. I found a staircase with a bunch of...crops? On both of its sides."
+                },
+                {
+                  "text": "They weren't poisonous, so I grabbed a bit of it, as well as some dark sand to grow it later once I got back. Those crops were essential as well for potions!"
+                },
+                {
+                  "text": "I continued exploring but nothing interesting happened after that, and I ran out of fire resistance potions so I was forced to retreat."
+                },
+                {
+                  "text": "Once I returned to our shelter at that time, I immediately went back at the lab to start experimenting with everything I gathered from that dimension."
+                },
+                {
+                  "text": "The rods can be pulverized into powder to fuel the brewing stand, so I can finally start brewing! I wonder how I managed not to break it when I was trying to fuel it with whatever I could find."
+                },
+                {
+                  "text": "My first potion didn't go as expected... I didn't feel any difference after drinking it, so I kept trying, using different objects and materials."
+                },
+                {
+                  "text": "After, like... 3 hours of wasting resources and water, I prepared my first potion! I felt way stronger after drinking it. I prepared 3 more and gave one to Blaze."
+                },
+                {
+                  "text": "She finished gathering wood in half the time she usually does! We even got time to visit a village and trade emeralds for some food."
+                },
+                {
+                  "text": "Those red crops were the key to make proper potions, you just put them before any other ingredient, and boom! Potions for everyone, I'm so happy I discovered this, and my teammates are happy as well."
+                },
+                {
+                  "text": "Dr. Kal'tsit is happy too, even though she doesn't often show her emotions. But I don't understand why she's still mad at me..."
+                }
+              ],
+              "mode": "append"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:strength"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 0,
+                "max": 2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
