@@ -1,0 +1,24 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 23080028,
+    "separation": 20,
+    "spacing": 30,
+    "spread_type": "linear",
+    "frequency_reduction_method": "default"
+  },
+  "structures": [
+    {
+      "structure": "arknightscraft:crater_b",
+      "weight": 1
+    },
+    {
+      "structure": "arknightscraft:crater_m",
+      "weight": 10
+    },
+    {
+      "structure": "arknightscraft:crater_s",
+      "weight": 16
+    }
+  ]
+}
