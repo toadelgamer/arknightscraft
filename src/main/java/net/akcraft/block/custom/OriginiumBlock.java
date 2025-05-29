@@ -35,7 +35,7 @@ public class OriginiumBlock extends Block {
         );
 
         for (LivingEntity entity : entities) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 60, 2));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 60, 1));
         }
 
         world.scheduleBlockTick(pos, this, 20);

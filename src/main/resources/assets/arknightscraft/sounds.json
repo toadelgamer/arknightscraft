@@ -29,6 +29,17 @@
     "subtitle": "subtitles.operators.u_official.hurt"
   },
 
+  "operator.skalter_idle": {
+    "sounds": [
+      "arknightscraft:operator/skalter_idle1",
+      "arknightscraft:operator/skalter_idle2",
+      "arknightscraft:operator/skalter_idle3",
+      "arknightscraft:operator/skalter_idle4",
+      "arknightscraft:operator/skalter_idle5"
+    ],
+    "subtitle": "subtitles.operators.skalter.idle"
+  },
+
   "science": {
     "sounds": [
       {

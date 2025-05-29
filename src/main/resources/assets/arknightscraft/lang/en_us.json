@@ -26,5 +26,6 @@
   "subtitles.operators.death": "Operator Dies",
   "subtitles.enemy.death": "Enemy Dies",
   "subtitles.operators.u_official.idle": "U-Official talks",
-  "subtitles.operators.u_official.hurt": "U-Official whimpers"
+  "subtitles.operators.u_official.hurt": "U-Official whimpers",
+  "subtitles.operators.skalter.idle": "Skadi Alter talks"
 }
