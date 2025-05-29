@@ -28,19 +28,19 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SkalterEntity extends TameableEntity {
+public class SoraEntity extends TameableEntity {
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
     private int abilityCooldown = 0;
 
-    public SkalterEntity(EntityType<? extends TameableEntity> entityType, World world) {
+    public SoraEntity(EntityType<? extends TameableEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public static DefaultAttributeContainer.Builder createSkalterAttributes() {
+    public static DefaultAttributeContainer.Builder createSoraAttributes() {
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 16.0)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 14.0)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.45)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32);
     }
@@ -75,12 +75,12 @@ public class SkalterEntity extends TameableEntity {
     }
 
     private void applyPassiveEffect() {
-        Box box = this.getBoundingBox().expand(5.0);
+        Box box = this.getBoundingBox().expand(3.0);
         List<LivingEntity> nearbyEntities = this.getWorld().getEntitiesByClass(LivingEntity.class, box,
                 entity -> !(entity instanceof HostileEntity));
 
         for (LivingEntity entity : nearbyEntities) {
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 80, 1));
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 80, 0));
             }
     }
 
@@ -168,7 +168,7 @@ public class SkalterEntity extends TameableEntity {
 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {
-        return ModSounds.SKALTER_IDLE;
+        return ModSounds.SORA_IDLE;
     }
 
     @Override

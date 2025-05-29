@@ -7,7 +7,6 @@ import net.minecraft.client.render.entity.animation.Transformation;
 
 public class EurekaAnimations {
 
-
     public static final Animation U_OFFICIAL_IDLE = Animation.Builder.create(2f).looping()
             .addBoneAnimation("left_arm",
                     new Transformation(Transformation.Targets.ROTATE,

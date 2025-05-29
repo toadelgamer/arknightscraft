@@ -4,6 +4,7 @@ import net.akcraft.ArknightsCraft;
 import net.akcraft.entity.custom.EurekaEntity;
 import net.akcraft.entity.custom.SkalterEntity;
 import net.akcraft.entity.custom.SlugEntity;
+import net.akcraft.entity.custom.SoraEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -18,6 +19,10 @@ public class ModEntities {
     public static final EntityType<SkalterEntity> SKADI_ALTER = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(ArknightsCraft.MOD_ID, "skadi_alter"),
             EntityType.Builder.create(SkalterEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(0.65f, 1.975f).build());
+    public static final EntityType<SoraEntity> SORA = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(ArknightsCraft.MOD_ID, "sora"),
+            EntityType.Builder.create(SoraEntity::new, SpawnGroup.CREATURE)
                     .dimensions(0.65f, 1.975f).build());
 
     public static final EntityType<SlugEntity> ORIGINIUM_SLUG = Registry.register(Registries.ENTITY_TYPE,

@@ -13,6 +13,8 @@ public class akcraftClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.U_OFFICIAL, EurekaRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(SkalterModel.SKADI_ALTER, SkalterModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.SKADI_ALTER, SkalterRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(SoraModel.SORA, SoraModel::getTexturedModelData);
+        EntityRendererRegistry.register(ModEntities.SORA, SoraRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(SlugModel.ORIGINIUM_SLUG, SlugModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.ORIGINIUM_SLUG, SlugRenderer::new);

@@ -17,6 +17,8 @@ public class ModSounds {
     public static final SoundEvent EUREKA_HURT = registerSoundEvent("operator.u_official_hurt");
 
     public static final SoundEvent SKALTER_IDLE = registerSoundEvent("operator.skalter_idle");
+    public static final SoundEvent SORA_IDLE = registerSoundEvent("operator.sora_idle");
+
 
     public static final SoundEvent SCIENCE = registerSoundEvent("science");
     public static final RegistryKey<JukeboxSong> SCIENCE_KEY = RegistryKey.of(RegistryKeys.JUKEBOX_SONG,

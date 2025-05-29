@@ -6,6 +6,7 @@ import net.akcraft.entity.ModEntities;
 import net.akcraft.entity.custom.EurekaEntity;
 import net.akcraft.entity.custom.SkalterEntity;
 import net.akcraft.entity.custom.SlugEntity;
+import net.akcraft.entity.custom.SoraEntity;
 import net.akcraft.item.ModItemGroups;
 import net.akcraft.item.ModItems;
 import net.akcraft.sound.ModSounds;
@@ -34,6 +35,8 @@ public class ArknightsCraft implements ModInitializer {
 
 		FabricDefaultAttributeRegistry.register(ModEntities.U_OFFICIAL, EurekaEntity.createEurekaAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.SKADI_ALTER, SkalterEntity.createSkalterAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.SORA, SoraEntity.createSoraAttributes());
+
 
 		FabricDefaultAttributeRegistry.register(ModEntities.ORIGINIUM_SLUG, SlugEntity.createSlugAttributes());
 	}
