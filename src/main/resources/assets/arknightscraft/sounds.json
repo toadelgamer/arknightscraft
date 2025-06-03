@@ -1,4 +1,10 @@
 {
+  "atk_boost": {
+  "sounds": [
+    "arknightscraft:atkboost"
+  ],
+  "subtitle": "subtitles.operators.atk_boost"
+},
   "op_dead": {
     "sounds": [
         "arknightscraft:opdead"
@@ -29,6 +35,29 @@
     "subtitle": "subtitles.operators.u_official.hurt"
   },
 
+  "operator.plume_idle": {
+    "sounds": [
+      "arknightscraft:operator/plume_idle1",
+      "arknightscraft:operator/plume_idle2",
+      "arknightscraft:operator/plume_idle3",
+      "arknightscraft:operator/plume_idle4",
+      "arknightscraft:operator/plume_idle5",
+      "arknightscraft:operator/plume_idle6",
+      "arknightscraft:operator/plume_idle7"
+    ],
+    "subtitle": "subtitles.operators.plume.idle"
+  },
+
+  "operator.plume_skill": {
+    "sounds": [
+      "arknightscraft:operator/plume_skill1",
+      "arknightscraft:operator/plume_skill2",
+      "arknightscraft:operator/plume_skill3",
+      "arknightscraft:operator/plume_skill4"
+    ],
+    "subtitle": "subtitles.operators.plume.skill"
+  },
+
   "operator.skalter_idle": {
     "sounds": [
       "arknightscraft:operator/skalter_idle1",
@@ -38,6 +67,20 @@
       "arknightscraft:operator/skalter_idle5"
     ],
     "subtitle": "subtitles.operators.skalter.idle"
+  },
+
+  "operator.sora_idle": {
+    "sounds": [
+      "arknightscraft:operator/sora_idle1",
+      "arknightscraft:operator/sora_idle2",
+      "arknightscraft:operator/sora_idle3",
+      "arknightscraft:operator/sora_idle4",
+      "arknightscraft:operator/sora_idle5",
+      "arknightscraft:operator/sora_idle6",
+      "arknightscraft:operator/sora_idle7",
+      "arknightscraft:operator/sora_idle8"
+    ],
+    "subtitle": "subtitles.operators.sora.idle"
   },
 
   "science": {

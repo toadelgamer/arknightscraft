@@ -4,6 +4,9 @@
   "item.arknightscraft.originite_prime": "Originite Prime",
 
   "item.arknightscraft.u_official_spawn_egg": "Deploy U-Official",
+  "item.arknightscraft.plume_spawn_egg": "Deploy Plume",
+  "item.arknightscraft.skalter_spawn_egg": "Deploy Skadi the Corrupting Heart",
+  "item.arknightscraft.sora_spawn_egg": "Deploy Sora",
   "item.arknightscraft.originium_slug_spawn_egg": "Spawn Originium Slug",
 
   "item.arknightscraft.science_music_disc": "Music Disc - Science",
@@ -19,13 +22,20 @@
   "itemgroup.arknightscraft.operators": "Operators/Entities",
   "itemgroup.arknightscraft.misc_blocks": "Misc. Blocks",
 
+  "entity.arknightscraft.plume": "Plume",
   "entity.arknightscraft.u_official": "U-Official",
+  "entity.arknightscraft.skadi_alter": "Skadi the Corrupting Heart",
+  "entity.arknightscraft.sora": "Sora",
 
   "entity.arknightscraft.originium_slug": "Originium Slug",
 
+  "subtitles.operators.atk_boost": "Attack Boost Skill",
   "subtitles.operators.death": "Operator Dies",
   "subtitles.enemy.death": "Enemy Dies",
+  "subtitles.operators.plume.idle": "Plume talks",
+  "subtitles.operators.plume.skill": "Plume attacks",
   "subtitles.operators.u_official.idle": "U-Official talks",
   "subtitles.operators.u_official.hurt": "U-Official whimpers",
-  "subtitles.operators.skalter.idle": "Skadi Alter talks"
+  "subtitles.operators.skalter.idle": "Skadi Alter talks",
+  "subtitles.operators.sora.idle": "Sora talks"
 }

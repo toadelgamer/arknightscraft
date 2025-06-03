@@ -18,6 +18,12 @@ public class ModItems {
 
     public static final Item U_OFFICIAL_EGG = registerItem("u_official_spawn_egg",
             new SpawnEggItem(ModEntities.U_OFFICIAL, 0xff8aff, 0xce8aff, new Item.Settings()));
+    public static final Item PLUME_EGG = registerItem("plume_spawn_egg",
+            new SpawnEggItem(ModEntities.PLUME, 0x191919, 0x7F5428, new Item.Settings()));
+    public static final Item SKALTER_EGG = registerItem("skalter_spawn_egg",
+            new SpawnEggItem(ModEntities.SKADI_ALTER, 0xa02128, 0x2ba4a6, new Item.Settings()));
+    public static final Item SORA_EGG = registerItem("sora_spawn_egg",
+            new SpawnEggItem(ModEntities.SORA, 0xf9ce8e, 0xa74455, new Item.Settings()));
     public static final Item SLUG_EGG = registerItem("originium_slug_spawn_egg",
             new SpawnEggItem(ModEntities.ORIGINIUM_SLUG, 0x1f1e19, 0xb89a04, new Item.Settings()));
 

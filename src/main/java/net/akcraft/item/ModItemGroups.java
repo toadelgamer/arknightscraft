@@ -43,6 +43,9 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.U_OFFICIAL_EGG))
                     .displayName(Text.translatable("itemgroup.arknightscraft.operators"))
                     .entries((displayContext, entries) -> {
+                        entries.add(ModItems.SKALTER_EGG);
+                        entries.add(ModItems.PLUME_EGG);
+                        entries.add(ModItems.SORA_EGG);
                         entries.add(ModItems.U_OFFICIAL_EGG);
                         entries.add(ModItems.SLUG_EGG);
 

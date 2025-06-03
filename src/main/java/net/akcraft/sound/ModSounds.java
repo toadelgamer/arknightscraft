@@ -12,10 +12,13 @@ import net.minecraft.util.Identifier;
 public class ModSounds {
     public static final SoundEvent OP_DEAD = registerSoundEvent("op_dead");
     public static final SoundEvent ENEMY_DEAD = registerSoundEvent("enemy_dead");
+    public static final SoundEvent ATK_BOOST = registerSoundEvent("atk_boost");
 
     public static final SoundEvent EUREKA_IDLE = registerSoundEvent("operator.u_official_idle");
     public static final SoundEvent EUREKA_HURT = registerSoundEvent("operator.u_official_hurt");
 
+    public static final SoundEvent PLUME_IDLE = registerSoundEvent("operator.plume_idle");
+    public static final SoundEvent PLUME_SKILL = registerSoundEvent("operator.plume_skill");
     public static final SoundEvent SKALTER_IDLE = registerSoundEvent("operator.skalter_idle");
     public static final SoundEvent SORA_IDLE = registerSoundEvent("operator.sora_idle");
 
