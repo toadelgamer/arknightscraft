@@ -2,6 +2,7 @@ package net.akcraft.item;
 
 import net.akcraft.ArknightsCraft;
 import net.akcraft.entity.ModEntities;
+import net.akcraft.item.custom.LapplandProjectile;
 import net.akcraft.sound.ModSounds;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
@@ -15,6 +16,9 @@ public class ModItems {
     public static final Item ORIGINITE_PRIME = registerItem("originite_prime", new Item(new Item.Settings()));
     public static final Item ORIGINIUM_SHARD = registerItem("originium_shard", new Item(new Item.Settings()));
     public static final Item ORUNDUM = registerItem("orundum", new Item(new Item.Settings()));
+
+    public static final Item LAPPLAND_P = registerItem("lappland_p", new LapplandProjectile(new Item.Settings()));
+
 
     public static final Item U_OFFICIAL_EGG = registerItem("u_official_spawn_egg",
             new SpawnEggItem(ModEntities.U_OFFICIAL, 0xff8aff, 0xce8aff, new Item.Settings()));

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "o": {
+      "item": "arknightscraft:originium_shard"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "sos",
+    "oRo",
+    "sos"
+  ],
+  "result": {
+    "count": 2,
+    "id": "arknightscraft:orundum"
+  }
+}

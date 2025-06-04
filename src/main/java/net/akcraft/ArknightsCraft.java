@@ -34,6 +34,7 @@ public class ArknightsCraft implements ModInitializer {
 		FabricDefaultAttributeRegistry.register(ModEntities.SKADI_ALTER, SkalterEntity.createSkalterAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.SORA, SoraEntity.createSoraAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.PLUME, PlumeEntity.createPlumeAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.LAPPLAND, LapplandEntity.createLapplandAttributes());
 
 		FabricDefaultAttributeRegistry.register(ModEntities.ORIGINIUM_SLUG, SlugEntity.createSlugAttributes());
 	}

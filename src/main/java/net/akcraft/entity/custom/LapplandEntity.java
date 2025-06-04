@@ -1,10 +1,11 @@
 package net.akcraft.entity.custom;
 
-import net.akcraft.entity.ai.PlumeAttackGoal;
+import net.akcraft.entity.ai.LapplandAttackGoal;
 import net.akcraft.item.ModItems;
 import net.akcraft.sound.ModSounds;
-import net.minecraft.entity.*;
 import net.minecraft.entity.AnimationState;
+import net.minecraft.entity.EntityStatuses;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -31,64 +32,70 @@ import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class PlumeEntity extends TameableEntity implements GeoEntity {
+public class LapplandEntity extends TameableEntity implements GeoEntity {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final TrackedData<Boolean> ATTACKING =
-            DataTracker.registerData(PlumeEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+            DataTracker.registerData(LapplandEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    private static final TrackedData<Boolean> RANGED_ATTACKING =
+            DataTracker.registerData(LapplandEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     public final AnimationState attackAnimationState = new AnimationState();
     public int attackAnimationTimeout = 0;
 
-    private int abilityCooldown = 240;
+    private int skillCharge = 0;
+    private static final int MAX_SKILL_CHARGE = 18;
 
     private void setupAnimationStates() {
-        if(this.isAttacking() && attackAnimationTimeout <= 0) {
-            attackAnimationTimeout = 5;
+        if ((this.isAttacking() || this.isRangedAttacking()) && attackAnimationTimeout <= 0) {
+            attackAnimationTimeout = 16;
             attackAnimationState.start(this.age);
         } else {
             --this.attackAnimationTimeout;
         }
-        if(!this.isAttacking()) {
+        if (!this.isAttacking() && !this.isRangedAttacking()) {
             attackAnimationState.stop();
         }
     }
 
-    public PlumeEntity(EntityType<? extends TameableEntity> entityType, World world) {
+    public LapplandEntity(EntityType<? extends TameableEntity> entityType, World world) {
         super(entityType, world);
     }
-    public static DefaultAttributeContainer.Builder createPlumeAttributes() {
+    public static DefaultAttributeContainer.Builder createLapplandAttributes() {
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 24.0)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 40.0)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.45)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED, 0.8f)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32);
-    }
-
-    private void skillCooldown() {
-        if (this.abilityCooldown <= 0) {
-            this.abilityCooldown = 2400;
-            this.applyPassiveEffect();
-        } else {
-            --this.abilityCooldown;
-        }
     }
 
     @Override
     public void tick() {
         super.tick();
 
-        if (!this.getWorld().isClient()) {
-            this.skillCooldown();
-        } else {
+        if (this.getWorld().isClient()) {
             this.setupAnimationStates();
         }
     }
 
-    private void applyPassiveEffect() {
+    public void incrementSkillCharge() {
+
+        if (this.hasStatusEffect(StatusEffects.STRENGTH)) {
+            return;
+        }
+
+        skillCharge++;
+
+        if (skillCharge >= MAX_SKILL_CHARGE) {
+            activateSkill();
+            skillCharge = 0;
+        }
+    }
+
+    private void activateSkill() {
         this.playSound(ModSounds.PLUME_SKILL, this.getSoundVolume(), 1.0f);
         this.playSound(ModSounds.ATK_BOOST, this.getSoundVolume(), 1.0f);
-        addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 1200, 0));
+        addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 1600, 1));
     }
 
     @Override
@@ -101,7 +108,7 @@ public class PlumeEntity extends TameableEntity implements GeoEntity {
         this.goalSelector.add(1, new SwimGoal(this));
         this.goalSelector.add(2, new SitGoal(this));
         this.goalSelector.add(3, new FollowOwnerGoal(this, 1.0, 8.0F, 1.0F));
-        this.goalSelector.add(4, new PlumeAttackGoal(this, 1.0, true));
+        this.goalSelector.add(4, new LapplandAttackGoal(this, 1.0, true));
         this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.5));
         this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.add(7, new LookAroundGoal(this));
@@ -172,10 +179,19 @@ public class PlumeEntity extends TameableEntity implements GeoEntity {
         return this.dataTracker.get(ATTACKING);
     }
 
+    public boolean isRangedAttacking() {
+        return this.dataTracker.get(RANGED_ATTACKING);
+    }
+
+    public void setRangedAttacking(boolean attacking) {
+        this.dataTracker.set(RANGED_ATTACKING, attacking);
+    }
+
     @Override
     protected void initDataTracker(DataTracker.Builder builder) {
         super.initDataTracker(builder);
         builder.add(ATTACKING, false);
+        builder.add(RANGED_ATTACKING, false);
     }
 
     @Override
@@ -212,18 +228,24 @@ public class PlumeEntity extends TameableEntity implements GeoEntity {
     private PlayState predicate(software.bernie.geckolib.animation.AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
         if (this.isAttacking()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then
-                    ("plume_attack", Animation.LoopType.PLAY_ONCE));
+                    ("attack", Animation.LoopType.PLAY_ONCE));
+            return PlayState.CONTINUE;
+        }
+
+        if (this.isRangedAttacking()) {
+            geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then
+                    ("attack_ranged", Animation.LoopType.PLAY_ONCE));
             return PlayState.CONTINUE;
         }
 
         if(geoAnimatableAnimationState.isMoving()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then
-                    ("plume_walk", Animation.LoopType.LOOP));
+                    ("walk", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
 
         geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then
-                ("plume_idle", Animation.LoopType.LOOP));
+                ("idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
 

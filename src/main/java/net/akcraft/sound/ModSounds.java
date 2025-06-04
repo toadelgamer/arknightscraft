@@ -14,6 +14,9 @@ public class ModSounds {
     public static final SoundEvent ENEMY_DEAD = registerSoundEvent("enemy_dead");
     public static final SoundEvent ATK_BOOST = registerSoundEvent("atk_boost");
 
+    public static final SoundEvent LP_THROW = registerSoundEvent("lp_throw");
+    public static final SoundEvent LP_HIT = registerSoundEvent("lp_hit");
+
     public static final SoundEvent EUREKA_IDLE = registerSoundEvent("operator.u_official_idle");
     public static final SoundEvent EUREKA_HURT = registerSoundEvent("operator.u_official_hurt");
 

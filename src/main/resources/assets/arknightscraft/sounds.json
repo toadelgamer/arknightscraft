@@ -17,6 +17,16 @@
       "arknightscraft:enemy_dead"
     ]
   },
+  "lp_throw": {
+    "sounds": [
+      "arknightscraft:lp_throw"
+    ]
+  },
+  "lp_hit": {
+    "sounds": [
+      "arknightscraft:lp_hit"
+    ]
+  },
 
   "operator.u_official_idle": {
     "sounds": [

@@ -30,6 +30,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ORIGINIUM_SHARD, Models.GENERATED);
         itemModelGenerator.register(ModItems.ORUNDUM, Models.GENERATED);
         itemModelGenerator.register(ModItems.SCIENCE_DISK, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LAPPLAND_P, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.U_OFFICIAL_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
