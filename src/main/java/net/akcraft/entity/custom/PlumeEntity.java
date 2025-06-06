@@ -106,6 +106,7 @@ public class PlumeEntity extends TameableEntity implements GeoEntity {
         this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.add(7, new LookAroundGoal(this));
 
+        this.targetSelector.add(1, new RevengeGoal(this));
         this.targetSelector.add(2, new TrackOwnerAttackerGoal(this));
         this.targetSelector.add(3, new AttackWithOwnerGoal(this));
     }

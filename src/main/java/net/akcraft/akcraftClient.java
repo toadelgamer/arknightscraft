@@ -5,6 +5,7 @@ import net.akcraft.entity.client.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 
 public class akcraftClient implements ClientModInitializer {
     @Override
@@ -17,6 +18,8 @@ public class akcraftClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.SORA, SoraRenderer::new);
         EntityRendererRegistry.register(ModEntities.PLUME, PlumeRenderer::new);
         EntityRendererRegistry.register(ModEntities.LAPPLAND, LapplandRenderer::new);
+
+        EntityRendererRegistry.register(ModEntities.LAPPLAND_PROJECTILE, FlyingItemEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(SlugModel.ORIGINIUM_SLUG, SlugModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.ORIGINIUM_SLUG, SlugRenderer::new);

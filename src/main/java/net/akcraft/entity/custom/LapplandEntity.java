@@ -1,11 +1,14 @@
 package net.akcraft.entity.custom;
 
-import net.akcraft.entity.ai.LapplandAttackGoal;
+import net.akcraft.entity.ai.LapplandMeleeAttackGoal;
+import net.akcraft.entity.ai.LapplandRangedAttackGoal;
 import net.akcraft.item.ModItems;
 import net.akcraft.sound.ModSounds;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -32,7 +35,7 @@ import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class LapplandEntity extends TameableEntity implements GeoEntity {
+public class LapplandEntity extends TameableEntity implements GeoEntity, RangedAttackMob {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final TrackedData<Boolean> ATTACKING =
             DataTracker.registerData(LapplandEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
@@ -40,20 +43,33 @@ public class LapplandEntity extends TameableEntity implements GeoEntity {
             DataTracker.registerData(LapplandEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     public final AnimationState attackAnimationState = new AnimationState();
-    public int attackAnimationTimeout = 0;
+    public final AnimationState rangedAttackAnimationState = new AnimationState();
+    public int attackAnimationTimeout = 18;
+    public int rangedAttackAnimationTimeout = 18;
 
     private int skillCharge = 0;
     private static final int MAX_SKILL_CHARGE = 18;
 
     private void setupAnimationStates() {
-        if ((this.isAttacking() || this.isRangedAttacking()) && attackAnimationTimeout <= 0) {
-            attackAnimationTimeout = 16;
+        if (this.isAttacking() && attackAnimationTimeout <= 0) {
+            attackAnimationTimeout = 18;
             attackAnimationState.start(this.age);
         } else {
             --this.attackAnimationTimeout;
         }
-        if (!this.isAttacking() && !this.isRangedAttacking()) {
+
+        if (this.isRangedAttacking() && rangedAttackAnimationTimeout <= 0) {
+            rangedAttackAnimationTimeout = 18;
+            rangedAttackAnimationState.start(this.age);
+        } else {
+            --this.rangedAttackAnimationTimeout;
+        }
+
+        if (!this.isAttacking()) {
             attackAnimationState.stop();
+        }
+        if (!this.isRangedAttacking()) {
+            rangedAttackAnimationState.stop();
         }
     }
 
@@ -65,15 +81,28 @@ public class LapplandEntity extends TameableEntity implements GeoEntity {
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 40.0)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.45)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4)
-                .add(EntityAttributes.GENERIC_ATTACK_SPEED, 0.8f)
+                .add(EntityAttributes.GENERIC_ATTACK_SPEED, 1.8f)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32);
     }
 
     @Override
     public void tick() {
         super.tick();
+        if (this.getWorld().isClient) {
 
-        if (this.getWorld().isClient()) {
+            if (this.isRangedAttacking()) {
+                rangedAttackAnimationTimeout--;
+                if (rangedAttackAnimationTimeout <= 0) {
+                    setRangedAttacking(false);
+                }
+            }
+
+            if (this.isAttacking()) {
+                attackAnimationTimeout--;
+                if (attackAnimationTimeout <= 0) {
+                    setAttacking(false);
+                }
+            }
             this.setupAnimationStates();
         }
     }
@@ -108,11 +137,13 @@ public class LapplandEntity extends TameableEntity implements GeoEntity {
         this.goalSelector.add(1, new SwimGoal(this));
         this.goalSelector.add(2, new SitGoal(this));
         this.goalSelector.add(3, new FollowOwnerGoal(this, 1.0, 8.0F, 1.0F));
-        this.goalSelector.add(4, new LapplandAttackGoal(this, 1.0, true));
-        this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.5));
-        this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
-        this.goalSelector.add(7, new LookAroundGoal(this));
+        //this.goalSelector.add(4, new LapplandMeleeAttackGoal(this, 1.0, true));
+        this.goalSelector.add(5, new LapplandRangedAttackGoal(this));
+        this.goalSelector.add(6, new WanderAroundFarGoal(this, 0.5));
+        this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
+        this.goalSelector.add(8, new LookAroundGoal(this));
 
+        this.targetSelector.add(1, new RevengeGoal(this));
         this.targetSelector.add(2, new TrackOwnerAttackerGoal(this));
         this.targetSelector.add(3, new AttackWithOwnerGoal(this));
     }
@@ -126,7 +157,7 @@ public class LapplandEntity extends TameableEntity implements GeoEntity {
                 if ((itemStack.isOf(ModItems.ORIGINITE_PRIME)) && this.getHealth() < this.getMaxHealth()) {
                     itemStack.decrementUnlessCreative(1, player);
                     this.heal(20.0F);
-                    this.getWorld().sendEntityStatus(this, EntityStatuses.ADD_VILLAGER_HAPPY_PARTICLES);
+                    this.getWorld().sendEntityStatus(this, EntityStatuses.CONSUME_ITEM);
                     return ActionResult.SUCCESS;
                 }
 
@@ -174,6 +205,11 @@ public class LapplandEntity extends TameableEntity implements GeoEntity {
         this.dataTracker.set(ATTACKING, attacking);
     }
 
+    public void setRangedAttacking(boolean rangedAttacking) {
+        this.dataTracker.set(RANGED_ATTACKING, rangedAttacking);
+        if (rangedAttacking) this.rangedAttackAnimationTimeout = 18;
+    }
+
     @Override
     public boolean isAttacking() {
         return this.dataTracker.get(ATTACKING);
@@ -181,10 +217,6 @@ public class LapplandEntity extends TameableEntity implements GeoEntity {
 
     public boolean isRangedAttacking() {
         return this.dataTracker.get(RANGED_ATTACKING);
-    }
-
-    public void setRangedAttacking(boolean attacking) {
-        this.dataTracker.set(RANGED_ATTACKING, attacking);
     }
 
     @Override
@@ -228,7 +260,7 @@ public class LapplandEntity extends TameableEntity implements GeoEntity {
     private PlayState predicate(software.bernie.geckolib.animation.AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
         if (this.isAttacking()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then
-                    ("attack", Animation.LoopType.PLAY_ONCE));
+                    ("attack_melee", Animation.LoopType.PLAY_ONCE));
             return PlayState.CONTINUE;
         }
 
@@ -252,5 +284,10 @@ public class LapplandEntity extends TameableEntity implements GeoEntity {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
+    }
+
+    @Override
+    public void shootAt(LivingEntity target, float pullProgress) {
+
     }
 }
