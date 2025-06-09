@@ -44,31 +44,28 @@ public class LapplandEntity extends TameableEntity implements GeoEntity, RangedA
 
     public final AnimationState attackAnimationState = new AnimationState();
     public final AnimationState rangedAttackAnimationState = new AnimationState();
-    public int attackAnimationTimeout = 18;
-    public int rangedAttackAnimationTimeout = 18;
+    public int attackAnimationTimeout = 15;
+    public int rangedAttackAnimationTimeout = 15;
 
     private int skillCharge = 0;
     private static final int MAX_SKILL_CHARGE = 18;
 
     private void setupAnimationStates() {
-        if (this.isAttacking() && attackAnimationTimeout <= 0) {
-            attackAnimationTimeout = 18;
-            attackAnimationState.start(this.age);
+        if (this.isAttacking()) {
+            if (!attackAnimationState.isRunning()) {
+                attackAnimationState.start(this.age);
+                attackAnimationTimeout = 15;
+            }
         } else {
-            --this.attackAnimationTimeout;
-        }
-
-        if (this.isRangedAttacking() && rangedAttackAnimationTimeout <= 0) {
-            rangedAttackAnimationTimeout = 18;
-            rangedAttackAnimationState.start(this.age);
-        } else {
-            --this.rangedAttackAnimationTimeout;
-        }
-
-        if (!this.isAttacking()) {
             attackAnimationState.stop();
         }
-        if (!this.isRangedAttacking()) {
+
+        if (this.isRangedAttacking()) {
+            if (!rangedAttackAnimationState.isRunning()) {
+                rangedAttackAnimationState.start(this.age);
+                rangedAttackAnimationTimeout = 15;
+            }
+        } else {
             rangedAttackAnimationState.stop();
         }
     }
@@ -88,24 +85,26 @@ public class LapplandEntity extends TameableEntity implements GeoEntity, RangedA
     @Override
     public void tick() {
         super.tick();
+
+        if (this.isRangedAttacking()) {
+            rangedAttackAnimationTimeout--;
+            if (rangedAttackAnimationTimeout <= 0) {
+                setRangedAttacking(false);
+            }
+        }
+
+        if (this.isAttacking()) {
+            attackAnimationTimeout--;
+            if (attackAnimationTimeout <= 0) {
+                setAttacking(false);
+            }
+        }
+
         if (this.getWorld().isClient) {
-
-            if (this.isRangedAttacking()) {
-                rangedAttackAnimationTimeout--;
-                if (rangedAttackAnimationTimeout <= 0) {
-                    setRangedAttacking(false);
-                }
-            }
-
-            if (this.isAttacking()) {
-                attackAnimationTimeout--;
-                if (attackAnimationTimeout <= 0) {
-                    setAttacking(false);
-                }
-            }
             this.setupAnimationStates();
         }
     }
+
 
     public void incrementSkillCharge() {
 
@@ -137,11 +136,11 @@ public class LapplandEntity extends TameableEntity implements GeoEntity, RangedA
         this.goalSelector.add(1, new SwimGoal(this));
         this.goalSelector.add(2, new SitGoal(this));
         this.goalSelector.add(3, new FollowOwnerGoal(this, 1.0, 8.0F, 1.0F));
-        //this.goalSelector.add(4, new LapplandMeleeAttackGoal(this, 1.0, true));
-        this.goalSelector.add(5, new LapplandRangedAttackGoal(this));
-        this.goalSelector.add(6, new WanderAroundFarGoal(this, 0.5));
-        this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
-        this.goalSelector.add(8, new LookAroundGoal(this));
+        this.goalSelector.add(4, new LapplandMeleeAttackGoal(this, 1.0, true));
+        this.goalSelector.add(4, new LapplandRangedAttackGoal(this));
+        this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.5));
+        this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
+        this.goalSelector.add(7, new LookAroundGoal(this));
 
         this.targetSelector.add(1, new RevengeGoal(this));
         this.targetSelector.add(2, new TrackOwnerAttackerGoal(this));
@@ -207,7 +206,6 @@ public class LapplandEntity extends TameableEntity implements GeoEntity, RangedA
 
     public void setRangedAttacking(boolean rangedAttacking) {
         this.dataTracker.set(RANGED_ATTACKING, rangedAttacking);
-        if (rangedAttacking) this.rangedAttackAnimationTimeout = 18;
     }
 
     @Override

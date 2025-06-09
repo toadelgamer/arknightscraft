@@ -16,8 +16,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
 
-import java.util.Objects;
-
 public class LapplandProjectileEntity extends ThrownItemEntity {
     public LapplandProjectileEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
@@ -38,14 +36,7 @@ public class LapplandProjectileEntity extends ThrownItemEntity {
         Entity target = entityHitResult.getEntity();
         Entity owner = this.getOwner();
 
-        if (target instanceof PlayerEntity) return;
-        if (target.equals(owner)) return;
-
-        if (target instanceof TameableEntity tameable && tameable.isTamed()) {
-            if (owner instanceof LivingEntity ownerLiving && Objects.equals(tameable.getOwnerUuid(), ownerLiving.getUuid())) {
-                return;
-            }
-        }
+        if (target instanceof PlayerEntity || target instanceof TameableEntity) return;
 
         target.damage(this.getWorld().getDamageSources().thrown(this, owner), 3.0f);
 

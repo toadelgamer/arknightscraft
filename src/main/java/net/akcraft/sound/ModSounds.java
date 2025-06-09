@@ -16,6 +16,10 @@ public class ModSounds {
 
     public static final SoundEvent LP_THROW = registerSoundEvent("lp_throw");
     public static final SoundEvent LP_HIT = registerSoundEvent("lp_hit");
+    public static final SoundEvent LP_SKILL = registerSoundEvent("lp_skill");
+
+    public static final SoundEvent LAPP_IDLE = registerSoundEvent("lapp_idle");
+    public static final SoundEvent LAPP_SKILL = registerSoundEvent("lapp_skill");
 
     public static final SoundEvent EUREKA_IDLE = registerSoundEvent("operator.u_official_idle");
     public static final SoundEvent EUREKA_HURT = registerSoundEvent("operator.u_official_hurt");

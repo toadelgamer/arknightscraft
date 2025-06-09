@@ -13,8 +13,7 @@ public class LapplandRangedAttackGoal extends Goal {
     private LivingEntity target;
 
     private int cooldownTicks = 0;
-    private final int attackInterval = 20; // 1 segundo aprox
-    private final float attackRange = 6.0f;
+    private final float attackRange = 8.0f;
 
     public LapplandRangedAttackGoal(LapplandEntity entity) {
         this.entity = entity;
@@ -60,20 +59,15 @@ public class LapplandRangedAttackGoal extends Goal {
             return;
         }
 
+        int attackInterval = 16;
         if (cooldownTicks <= 0) {
-            // Iniciar animación si existe
             entity.setRangedAttacking(true);
-            entity.rangedAttackAnimationTimeout = 10;
+            entity.rangedAttackAnimationTimeout = 15;
 
-            // Lanzar proyectil
             launchProjectile(target);
             cooldownTicks = attackInterval;
         } else {
             cooldownTicks--;
-            if (cooldownTicks == attackInterval - 2) {
-                // Apagar la animación justo antes del próximo ataque
-                entity.setRangedAttacking(false);
-            }
         }
     }
 
